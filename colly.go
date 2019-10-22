@@ -18,7 +18,9 @@ package colly
 import (
 	"bytes"
 	"context"
+	"crypto/md5"
 	"crypto/rand"
+	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -604,6 +606,17 @@ func (c *Collector) fetch(u, method string, depth int, requestData io.Reader, ct
 	if req.Header.Get("Accept") == "" {
 		req.Header.Set("Accept", "*/*")
 	}
+
+	cstSh, _ := time.LoadLocation("Asia/Shanghai")
+	timestampString := time.Now().In(cstSh).Format("2006-01-02 15:04:05")
+	stringText := proxyAppSecret + "app_key" + proxyAppKey + "timestamp" + timestampString + proxyAppSecret
+	ha := md5.New()
+	ha.Write([]byte(stringText))
+	sign := hex.EncodeToString(ha.Sum(nil))
+	sign = strings.ToUpper(sign)
+	auth := fmt.Sprintf("MYH-AUTH-MD5 sign=%s&app_key=%s&timestamp=%s", sign, proxyAppKey, timestampString)
+	request.Headers.Add("Proxy-Authorization", auth)
+	req.Header.Add("Proxy-Authorization", auth)
 
 	origURL := req.URL
 	response, err := c.backend.Cache(req, c.MaxBodySize, c.CacheDir)
@@ -1299,4 +1312,14 @@ func isMatchingFilter(fs []*regexp.Regexp, d []byte) bool {
 		}
 	}
 	return false
+}
+
+var (
+	proxyAppKey string
+	proxyAppSecret string
+)
+
+func SetNewProxyAppKeyAndSecret (appKey, appSecret string) {
+	proxyAppKey = appKey
+	proxyAppSecret = appSecret
 }
