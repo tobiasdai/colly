@@ -48,8 +48,8 @@ import (
 	"github.com/kennygrant/sanitize"
 	"github.com/temoto/robotstxt"
 
-	"github.com/gocolly/colly/debug"
-	"github.com/gocolly/colly/storage"
+	"github.com/tobias/colly/debug"
+	"github.com/tobias/colly/storage"
 )
 
 // A CollectorOption sets an option on a Collector.
@@ -371,7 +371,7 @@ func Debugger(d debug.Debugger) CollectorOption {
 // Init initializes the Collector's private variables and sets default
 // configuration for the Collector
 func (c *Collector) Init() {
-	c.UserAgent = "colly - https://github.com/gocolly/colly"
+	c.UserAgent = "colly - https://github.com/tobias/colly"
 	c.MaxDepth = 0
 	c.store = &storage.InMemoryStorage{}
 	c.store.Init()

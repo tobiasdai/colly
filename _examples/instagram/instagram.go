@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/gocolly/colly"
+	"github.com/tobias/colly"
 )
 
 // "id": user id, "after": end cursor
