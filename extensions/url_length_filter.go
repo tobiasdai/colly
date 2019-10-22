@@ -1,7 +1,7 @@
 package extensions
 
 import (
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 // URLLengthFilter filters out requests with URLs longer than URLLengthLimit

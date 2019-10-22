@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/tobias/colly"
-	"github.com/tobias/colly/queue"
+	"github.com/tobiasdai/colly"
+	"github.com/tobiasdai/colly/queue"
 )
 
 func main() {

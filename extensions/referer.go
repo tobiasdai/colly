@@ -1,7 +1,7 @@
 package extensions
 
 import (
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 // Referer sets valid Referer HTTP header to requests.

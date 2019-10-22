@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 type pageInfo struct {

@@ -20,7 +20,7 @@ import (
 	"net/url"
 	"sync/atomic"
 
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 type roundRobinSwitcher struct {

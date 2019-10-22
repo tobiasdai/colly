@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/tobias/colly"
-	"github.com/tobias/colly/debug"
+	"github.com/tobiasdai/colly"
+	"github.com/tobiasdai/colly/debug"
 )
 
 func main() {

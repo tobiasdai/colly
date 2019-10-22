@@ -1,4 +1,4 @@
-module github.com/tobias/colly
+module github.com/tobiasdai/colly
 
 go 1.12
 

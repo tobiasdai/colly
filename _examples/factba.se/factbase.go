@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"strconv"
 
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 var baseSearchURL = "https://factba.se/json/json-transcript.php?q=&f=&dt=&p="

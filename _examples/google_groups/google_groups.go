@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 // Mail is the container of a single e-mail

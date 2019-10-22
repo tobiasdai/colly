@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 type item struct {

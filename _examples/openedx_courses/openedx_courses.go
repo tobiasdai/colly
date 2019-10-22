@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 // DATE_FORMAT default format date used in openedx

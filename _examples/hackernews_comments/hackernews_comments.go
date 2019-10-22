@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 type comment struct {

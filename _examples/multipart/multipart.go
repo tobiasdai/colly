@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/tobias/colly"
+	"github.com/tobiasdai/colly"
 )
 
 func generateFormData() map[string][]byte {
