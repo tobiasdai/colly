@@ -20,6 +20,7 @@ import (
 	"context"
 	"crypto/md5"
 	"crypto/rand"
+	"crypto/tls"
 	"encoding/hex"
 	"encoding/json"
 	"errors"
@@ -928,6 +929,7 @@ func (c *Collector) SetProxyFunc(p ProxyFunc) {
 	} else {
 		c.backend.Client.Transport = &http.Transport{
 			Proxy: p,
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 		}
 	}
 }
