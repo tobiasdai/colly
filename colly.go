@@ -18,10 +18,8 @@ package colly
 import (
 	"bytes"
 	"context"
-	"crypto/md5"
 	"crypto/rand"
 	"crypto/tls"
-	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -608,7 +606,7 @@ func (c *Collector) fetch(u, method string, depth int, requestData io.Reader, ct
 		req.Header.Set("Accept", "*/*")
 	}
 
-	cstSh, _ := time.LoadLocation("Asia/Shanghai")
+/*	cstSh, _ := time.LoadLocation("Asia/Shanghai")
 	timestampString := time.Now().In(cstSh).Format("2006-01-02 15:04:05")
 	stringText := proxyAppSecret + "app_key" + proxyAppKey + "timestamp" + timestampString + proxyAppSecret
 	ha := md5.New()
@@ -618,7 +616,7 @@ func (c *Collector) fetch(u, method string, depth int, requestData io.Reader, ct
 	auth := fmt.Sprintf("MYH-AUTH-MD5 sign=%s&app_key=%s&timestamp=%s", sign, proxyAppKey, timestampString)
 	request.Headers.Add("Proxy-Authorization", auth)
 	req.Header.Add("Proxy-Authorization", auth)
-
+*/
 	origURL := req.URL
 	response, err := c.backend.Cache(req, c.MaxBodySize, c.CacheDir)
 	if proxyURL, ok := req.Context().Value(ProxyURLKey).(string); ok {
